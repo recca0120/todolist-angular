@@ -69,4 +69,14 @@ describe('expect', () => {
         expect(a.foo).not.toBeUndefined();
         expect(a.bar).toBeUndefined();
     });
+
+    it ('toBeNull', () => {
+        const a = null;
+        const foo = 'foo';
+
+        expect(null).toBeNull();
+        expect(a).toBeNull();
+        expect(foo).not.toBeNull();
+    });
+
 });
