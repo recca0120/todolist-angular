@@ -87,4 +87,12 @@ describe('expect', () => {
         expect(a).not.toBeTruthy();
     });
 
+    it ('toBeFalsy', () => {
+        const a = undefined;
+        const foo = 'foo';
+
+        expect(a).toBeFalsy();
+        expect(foo).not.toBeFalsy();
+    });
+
 });
