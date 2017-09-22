@@ -95,4 +95,11 @@ describe('expect', () => {
         expect(foo).not.toBeFalsy();
     });
 
+    it ('toContain Array', () => {
+        const a = ['foo', 'bar', 'baz'];
+
+        expect(a).toContain('bar');
+        expect(a).not.toContain('quux');
+    });
+
 });
