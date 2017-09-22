@@ -102,4 +102,11 @@ describe('expect', () => {
         expect(a).not.toContain('quux');
     });
 
+    it ('toContain String', () => {
+        const a = 'foo bar baz';
+
+        expect(a).toContain('bar');
+        expect(a).not.toContain('quux');
+    });
+
 });
