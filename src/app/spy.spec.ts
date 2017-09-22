@@ -35,4 +35,12 @@ describe('spy', () => {
         expect(foo.setBar).toHaveBeenCalledWith('buzz');
     });
 
+    it('spyOn callThrough', () => {
+        spyOn(foo, 'setBar').and.callThrough();
+
+        foo.setBar('buzz');
+
+        expect(foo.getBar()).toBe('buzz');
+    });
+
 });
