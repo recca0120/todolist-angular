@@ -117,4 +117,12 @@ describe('expect', () => {
         expect(pi).not.toBeLessThan(e);
     });
 
+    it('toBeGreaterThan', () => {
+        const pi = 3.1415926;
+        const e = 2.78;
+
+        expect(pi).toBeGreaterThan(e);
+        expect(e).not.toBeGreaterThan(pi);
+    });
+
 });
