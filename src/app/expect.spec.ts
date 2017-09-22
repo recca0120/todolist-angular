@@ -13,4 +13,9 @@ describe('expect', () => {
         expect(a).toEqual(1);
     });
 
+    it('not toEqual', () => {
+        const a = 1;
+        expect(a).not.toEqual(2);
+    });
+
 });
