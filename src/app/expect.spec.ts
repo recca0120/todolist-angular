@@ -8,4 +8,9 @@ describe('expect', () => {
         expect(true).not.toBe(false);
     });
 
+    it('toEqual', () => {
+        const a = 1;
+        expect(a).toEqual(1);
+    });
+
 });
