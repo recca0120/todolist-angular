@@ -1,16 +1,7 @@
-describe('test sute', () => {
+describe('expect', () => {
 
-    it('test case 1', () => {
-        // ...
+    it('toBe', () => {
+        expect(true).toBe(true);
     });
 
-    it('test case 2', () => {
-        // ...
-    });
-
-    it('test case 3', () => {
-        // ...
-    });
-
-    // ...
 });
