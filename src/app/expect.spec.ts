@@ -79,4 +79,12 @@ describe('expect', () => {
         expect(foo).not.toBeNull();
     });
 
+    it ('toBeTruthy', () => {
+        const a = undefined;
+        const foo = 'foo';
+
+        expect(foo).toBeTruthy();
+        expect(a).not.toBeTruthy();
+    });
+
 });
