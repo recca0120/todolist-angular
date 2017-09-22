@@ -18,6 +18,10 @@ export class TodoService {
         return this.tasks;
     }
 
+    filter(fn): Task[] {
+        return this.tasks.filter(fn);
+    }
+
     count(): number {
         return this.tasks.length;
     }

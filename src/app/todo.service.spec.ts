@@ -29,4 +29,17 @@ describe('TodoService', () => {
 
         expect(service.count()).toBe(2);
     }));
+
+    it('條件飾選', inject([TodoService], (service: TodoService) => {
+        service
+            .put(new Task('task'))
+            .put(new Task('task'))
+            .put(new Task('task', new Date, true))
+            .put(new Task('task'))
+            .put(new Task('task', new Date, true));
+
+        expect(service.filter((task: Task) => {
+            return task.done === false;
+        }).length).toBe(3);
+    }));
 });
