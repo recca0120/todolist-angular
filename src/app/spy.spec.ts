@@ -41,6 +41,10 @@ describe('spy', () => {
         foo.setBar('buzz');
 
         expect(foo.getBar()).toBe('buzz');
+
+        expect(foo.setBar).toHaveBeenCalled();
+        expect(foo.setBar).toHaveBeenCalledTimes(1);
+        expect(foo.setBar).toHaveBeenCalledWith('buzz');
     });
 
 });
