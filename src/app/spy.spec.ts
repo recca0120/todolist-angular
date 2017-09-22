@@ -13,12 +13,17 @@ class Foo {
 }
 
 describe('spy', () => {
+    let foo: Foo;
 
-    it('spy', () => {
-        const foo = new Foo();
+    beforeEach(() => {
+        foo = new Foo();
 
         expect(foo.setBar('fooBar')).toBe(foo);
         expect(foo.getBar()).toBe('fooBar');
+    });
+
+    it('spyOn', () => {
+
     });
 
 });
