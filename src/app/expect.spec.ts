@@ -34,4 +34,12 @@ describe('expect', () => {
         expect(b).not.toBe(c);
     });
 
+    it ('toMatch', () => {
+        const message = 'foo bar baz';
+
+        expect(message).toMatch(/bar/);
+        expect(message).toMatch('bar');
+        expect(message).not.toMatch(/quux/);
+    });
+
 });
