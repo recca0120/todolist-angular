@@ -21,4 +21,12 @@ describe('TodoService', () => {
 
         expect(service.all()).toEqual([task, task2]);
     }));
+
+    it('計算 Task 個數', inject([TodoService], (service: TodoService) => {
+        const task = new Task('task1');
+        const task2 = new Task('task2');
+        service.put(task).put(task2);
+
+        expect(service.count()).toBe(2);
+    }));
 });

@@ -17,4 +17,8 @@ export class TodoService {
     all(): Task[] {
         return this.tasks;
     }
+
+    count(): number {
+        return this.tasks.length;
+    }
 }
