@@ -18,7 +18,7 @@ describe('expect', () => {
         expect(a).not.toEqual(2);
     });
 
-    it ('toBe vs toEqual', () => {
+    it('toBe vs toEqual', () => {
         const a = { bar: 'baz' };
         const b = { foo: a };
         const c = { foo: a };
@@ -34,7 +34,7 @@ describe('expect', () => {
         expect(b).not.toBe(c);
     });
 
-    it ('toMatch', () => {
+    it('toMatch', () => {
         const message = 'foo bar baz';
 
         expect(message).toMatch(/bar/);
@@ -42,7 +42,7 @@ describe('expect', () => {
         expect(message).not.toMatch(/quux/);
     });
 
-    it ('toBeDefined', () => {
+    it('toBeDefined', () => {
         interface A {
             foo: string;
             bar ?: string;
@@ -56,7 +56,7 @@ describe('expect', () => {
         expect(a.bar).not.toBeDefined();
     });
 
-    it ('toBeUndefined', () => {
+    it('toBeUndefined', () => {
         interface A {
             foo: string;
             bar ?: string;
@@ -70,7 +70,7 @@ describe('expect', () => {
         expect(a.bar).toBeUndefined();
     });
 
-    it ('toBeNull', () => {
+    it('toBeNull', () => {
         const a = null;
         const foo = 'foo';
 
@@ -79,7 +79,7 @@ describe('expect', () => {
         expect(foo).not.toBeNull();
     });
 
-    it ('toBeTruthy', () => {
+    it('toBeTruthy', () => {
         const a = undefined;
         const foo = 'foo';
 
@@ -87,7 +87,7 @@ describe('expect', () => {
         expect(a).not.toBeTruthy();
     });
 
-    it ('toBeFalsy', () => {
+    it('toBeFalsy', () => {
         const a = undefined;
         const foo = 'foo';
 
@@ -95,18 +95,26 @@ describe('expect', () => {
         expect(foo).not.toBeFalsy();
     });
 
-    it ('toContain Array', () => {
+    it('toContain Array', () => {
         const a = ['foo', 'bar', 'baz'];
 
         expect(a).toContain('bar');
         expect(a).not.toContain('quux');
     });
 
-    it ('toContain String', () => {
+    it('toContain String', () => {
         const a = 'foo bar baz';
 
         expect(a).toContain('bar');
         expect(a).not.toContain('quux');
+    });
+
+    it('toBeLessThan', () => {
+        const pi = 3.1415926;
+        const e = 2.78;
+
+        expect(e).toBeLessThan(pi);
+        expect(pi).not.toBeLessThan(e);
     });
 
 });
