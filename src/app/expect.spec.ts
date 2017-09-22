@@ -56,4 +56,17 @@ describe('expect', () => {
         expect(a.bar).not.toBeDefined();
     });
 
+    it ('toBeUndefined', () => {
+        interface A {
+            foo: string;
+            bar ?: string;
+        }
+
+        const a: A = {
+            foo: 'foo',
+        };
+
+        expect(a.foo).not.toBeUndefined();
+        expect(a.bar).toBeUndefined();
+    });
 });
