@@ -42,4 +42,18 @@ describe('expect', () => {
         expect(message).not.toMatch(/quux/);
     });
 
+    it ('toBeDefined', () => {
+        interface A {
+            foo: string;
+            bar ?: string;
+        }
+
+        const a: A = {
+            foo: 'foo',
+        };
+
+        expect(a.foo).toBeDefined();
+        expect(a.bar).not.toBeDefined();
+    });
+
 });
