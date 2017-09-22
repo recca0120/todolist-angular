@@ -29,6 +29,8 @@ describe('spy', () => {
 
         expect(foo.getBar()).not.toBe('buzz');
         expect(foo.getBar()).toBe('fooBar');
+
+        expect(foo.setBar).toHaveBeenCalled();
     });
 
 });
