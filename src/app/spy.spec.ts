@@ -47,10 +47,13 @@ describe('spy', () => {
         expect(foo.setBar).toHaveBeenCalledWith('buzz');
     });
 
-    it('spyOn and return value', () => {
+    it('spyOn and returValue', () => {
         spyOn(foo, 'getBar').and.returnValue('fake value');
 
         expect(foo.getBar()).toBe('fake value');
+
+        expect(foo.getBar).toHaveBeenCalled();
+        expect(foo.getBar).toHaveBeenCalledTimes(1);
     });
 
 });
