@@ -18,4 +18,20 @@ describe('expect', () => {
         expect(a).not.toEqual(2);
     });
 
+    it ('toBe vs toEqual', () => {
+        const a = { bar: 'baz' };
+        const b = { foo: a };
+        const c = { foo: a };
+
+        expect(b.foo.bar).toEqual(c.foo.bar);
+        expect(b.foo.bar).toEqual(a.bar);
+        expect(b.foo).toEqual(c.foo);
+        expect(b).toEqual(c);
+
+        expect(b.foo.bar).toBe(c.foo.bar);
+        expect(b.foo.bar).toBe(a.bar);
+        expect(b.foo).toBe(c.foo);
+        expect(b).not.toBe(c);
+    });
+
 });
