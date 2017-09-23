@@ -1,0 +1,8 @@
+<li [class.completed]=task.done>
+    <div class="view">
+        <input class="toggle" type="checkbox" [checked]="task.done">
+        <label (click)="select()">{{ task.name }}</label>
+        <button class="destroy"></button>
+    </div>
+    <input class="edit" value="{{ !selected ? 'Create a TodoMVC template' : selected.name }}"  (keyup.enter)="update(task)">
+</li>
