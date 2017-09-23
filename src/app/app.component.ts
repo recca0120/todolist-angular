@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { TodoService } from './todo.service';
-import { Todo } from './todo';
+import {Component, OnInit} from '@angular/core';
+
+import {Todo} from './todo';
+import {TodoService, TodoStatus} from './todo.service';
 
 @Component({
   selector: 'app-root',
@@ -9,20 +10,20 @@ import { Todo } from './todo';
 })
 export class AppComponent implements OnInit {
   title = 'app';
+  todoStatus = TodoStatus;
   todoList: Todo[] = [];
   todoListfilter = null;
 
-  constructor(private todoService: TodoService) {
-  }
+  constructor(private todoService: TodoService) {}
 
-  ngOnInit(){
+  ngOnInit() {
     this.todoService.put(new Todo('1'));
     this.todoService.put(new Todo('2'));
     this.todoService.put(new Todo('3', true));
     this.todoService.put(new Todo('4'));
     this.todoList = this.todoService.get();
   }
-  
+
   create(input: HTMLInputElement) {
     if (input.value === '') {
       return
@@ -38,7 +39,7 @@ export class AppComponent implements OnInit {
     this.todoList = this.todoService.get();
   }
 
-  filter(todoListfilter) {
+  filter(todoListfilter: TodoStatus) {
     this.todoList = this.todoService.get(todoListfilter);
   }
 
