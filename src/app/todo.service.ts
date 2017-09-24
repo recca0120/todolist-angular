@@ -1,12 +1,17 @@
-import { Injectable } from '@angular/core';
-import { Todo } from './todo';
+import {Injectable} from '@angular/core';
+import {Todo} from './todo';
+export enum TodoStatus {
+  all,
+  active,
+  completed
+}
+;
 
 @Injectable()
 export class TodoService {
-
   items: Todo[] = [];
 
-  constructor() { }
+  constructor() {}
 
   put(todo: Todo): this {
     this.items.push(todo);
@@ -14,26 +19,17 @@ export class TodoService {
     return this;
   }
 
-  get(done?: boolean): Todo[] {
+  get(status: TodoStatus = TodoStatus.all): Todo[] {
     return this.items.filter((item) => {
-      if (done === undefined) {
-        return true;
+      switch (status) {
+        case TodoStatus.active:
+          return item.done === false;
+        case TodoStatus.completed:
+          return item.done === true;
+        default:
+          return true;
       }
-
-      return item.done === done;
     });
-  }
-
-  getAll(): Todo[] {
-    return this.get();
-  }
-
-  getActive(): Todo[] {
-    return this.get(false);
-  }
-
-  getCompleted(): Todo[] {
-    return this.get(true);
   }
 
   remove(todo: Todo): void {
